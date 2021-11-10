@@ -1,0 +1,27 @@
+plugins {
+    id 'scala'
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    scalaMajorVersion = '2.12'
+    scalaVersion = '2.12.15'
+}
+
+dependencies {
+    implementation "org.scala-lang:scala-library:${scalaVersion}"
+    testImplementation "org.scalameta:munit_${scalaMajorVersion}:0.7.29"
+}
+
+test {
+    useJUnitPlatform()
+}
